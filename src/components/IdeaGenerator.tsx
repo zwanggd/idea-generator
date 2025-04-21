@@ -16,7 +16,7 @@ const IdeaGenerator = () => {
     const [isThinking, setIsThinking] = useState(false)
     const [hasGeneratedOnce, setHasGeneratedOnce] = useState(false)
     const [positions, setPositions] = useState<{ x: number; y: number }[]>([])
-    const [fusedIdeas, setFusedIdeas] = useState<string[]>([])
+    const [, setFusedIdeas] = useState<string[]>([])
     const [fusionRecords, setFusionRecords] = useState<{ source: string[]; result: string; score: string }[]>([])
     const [resetGridKey, setResetGridKey] = useState(0)
 

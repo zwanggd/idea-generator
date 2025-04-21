@@ -3,7 +3,7 @@ import IdeaBubble from './IdeaBubble'
 
 interface IdeaFieldProps {
   ideas: { text: string; type: 'normal' | 'fused' }[]
-  originRef: React.RefObject<HTMLDivElement>
+  originRef: React.RefObject<HTMLDivElement | null>
   positions: { x: number; y: number }[]
   setPositions: React.Dispatch<React.SetStateAction<{ x: number; y: number }[]>>
 }

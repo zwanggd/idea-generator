@@ -23,7 +23,7 @@ const IdeaBubble = ({ idea, initialPos, type = 'normal' }: IdeaBubbleProps) => {
       dragMomentum={true}
       dragTransition={{ bounceStiffness: 90, bounceDamping: 12 }}
       onDragStart={() => setIsDragging(true)}
-      onDragEnd={(e, info) => {
+      onDragEnd={(_, info) => {
         setIsDragging(false)
         setPos((prev) => ({
           x: prev.x + info.delta.x,
