@@ -1,54 +1,95 @@
-# React + TypeScript + Vite
+# 创意广告词生成器
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是一个基于 React、Tailwind CSS 和 OpenAI API 的创意广告词生成工具，可以帮助用户快速生成、组合和优化广告创意。
 
-Currently, two official plugins are available:
+## ✨ 功能特点
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🧠 基于用户输入的主题生成创意广告词
+- 💫 视觉化效果：创意以动态气泡形式展示
+- 🎮 交互体验：拖拽创意到九宫格组合
+- 🔄 创意融合：自动合成多个点子并评分
+- 🎨 设计美观：暗色主题、粒子背景
 
-## Expanding the ESLint configuration
+## 🚀 本地部署
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 环境要求
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js 16.x 或更高版本
+- npm 或 yarn 包管理器
+- OpenAI API 密钥（可选，用于实际 AI 功能）
+
+### 安装步骤
+
+1. **克隆仓库**
+
+```bash
+git clone [仓库地址]
+cd idea-generator
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **安装依赖**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
+# 或使用 yarn
+yarn install
 ```
+
+3. **配置环境变量**
+
+在项目根目录创建 `.env` 文件，添加 OpenAI API 密钥：
+
+```
+VITE_OPENAI_API_KEY=你的OpenAI密钥
+```
+
+> 注意：如果没有 API 密钥，应用仍可运行，但会使用模拟数据而非实际 AI 生成内容。
+
+4. **启动开发服务器**
+
+```bash
+npm run dev
+# 或使用 yarn
+yarn dev
+```
+
+应用将在 `http://localhost:5173/` 运行（或 Vite 指定的其他端口）。
+
+## 🧩 功能使用说明
+
+### 1. 生成创意广告词
+
+1. 在输入框中输入产品或品牌主题，如"沉浸式健身房"
+2. 点击"寻求灵感"按钮
+3. 等待系统生成创意（会展示脑电波动画）
+4. 生成的创意会以气泡形式展示在页面中
+
+### 2. 创意组合与融合
+
+1. 将飘浮的创意气泡拖拽到九宫格的格子中
+2. 当九宫格中至少有 2 个创意时，可点击"合成点子"按钮
+3. 系统会自动组合创意并给出评分
+4. 融合结果将显示在"融合记录"区域
+
+### 3. 继续扩展创意
+
+- 点击"绞尽脑汁"按钮可生成更多创意
+- 融合结果也可以拖拽并再次组合
+
+## 📝 其他说明
+
+- 创意气泡支持自由拖动，可以在页面上任意移动
+- 应用使用响应式设计，在移动设备上也有良好体验
+- 暗色主题设计，长时间使用也不会视觉疲劳
+
+## 🔧 技术栈
+
+- React + TypeScript
+- Tailwind CSS 样式框架
+- Framer Motion 动画库
+- OpenAI API (GPT-4o) 生成内容
+- Vite 构建工具
+
+## 📄 许可证
+
+[LICENSE 类型] - 查看 LICENSE 文件了解更多信息。
